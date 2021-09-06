@@ -1,0 +1,318 @@
+* {
+    margin:0;
+    padding:0;
+}
+/* Navegador*/
+.navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30 !important;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+    
+  }
+  .menu-grid-main{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 150%;
+    
+  }
+
+  
+  .dropdown-menu{
+    background-color: #2d2d30e3 !important;
+  }
+
+  .open .dropdown-toggle {
+    color: #fff;
+    background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #2d2d305b !important;
+  }
+  
+  /*Color Letras del header navegador*/
+  .navbar li a, .navbar .navbar-brand { 
+    color: gold !important;
+    height:60px;
+  }
+
+  /*Modificar posicion de lo que esta al interior del navbar como las opciones del navegador*/
+  #myNavbar{
+    margin-top: 10px;
+  
+    }
+/*Para ver cual opcion del navegador tengo selecionado pasando el cursor*/
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+
+  
+/* Manejar las imagenes del carrusel*/
+  .carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    max-height: 800px;
+  }
+/* Llame la clase que encapsula todo el carrusel mediante la id asignada*/
+#myCarousel{
+    background-color: rgb(214, 211, 211);
+    width: 100%;
+    height: auto;
+    margin-top: -20px;
+}
+
+#tituloMenu{
+  color:white;
+  font-family: "Times New Roman", Times, serif;
+}
+.listaMenu{
+  background: url('../img/fondoMenu2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  
+  margin-top: -40px;
+}
+
+ #imagenMenu{
+  width: 100% ;
+  height: 400px ;
+  background-color: #fafafa;
+  border: 2px solid #ccc;
+  
+
+}
+
+
+.tituloPlato{
+  background: url('../img/fondoMenu2.jpg');
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  object-fit: cover;
+
+}
+
+.precioPlato{
+  background: url('../img/BarraPrecio.png');
+  object-fit: cover;
+} 
+
+  /*************button del html carta***************************/
+
+
+
+#button1{
+  background: url('../img/hamburguesasCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  border: 0px;
+  }
+
+#button2{
+  background: url('../img/sopasCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  border: 0px;
+  }
+
+#button3{
+  background: url('../img/cremasCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  border: 0px;
+  }
+
+#button4{
+  background: url('../img/postresCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  border: 0px;
+  }
+
+#button5{
+  background: url('../img/pizzasCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  border: 0px;
+  }
+
+#button6{
+  background: url('../img/ensaladasCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  border: 0px;
+  }
+
+#button7{
+  background: url('../img/bebidaCat.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 250px;
+  height: 250px;
+  
+  color: white;
+  border: 0px;
+  }
+
+
+
+  /********************************************/
+
+.barraInferior{
+  
+  background-color:#000000da;
+}
+  #logo{
+    width: 67px;
+    height: 57px;
+    margin-top: -10px;
+  }
+
+.landind{
+    background-color:#000000da;
+    margin-top:  -20px;
+}
+.eslogan{
+    color: white;
+}
+  .imagen_perfil{
+    width: 100%;
+   max-height: 800px;
+   margin-top: -30px;
+}
+  .contenedor_menu {
+    width: 90%;
+    min-height: 400px;
+    height: auto;
+    background-color:rgb(241, 241, 241);
+    margin:auto;
+}
+.menu {
+    width: 200px;
+    height: 350px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top:30px;
+    margin-left:30px;
+    overflow: hidden;
+}
+
+.menu > img {
+    width: 100%; 
+    height: 300px;
+    transition: all 0.5s;
+}
+
+.menu > img:hover {
+    transform: scale(1.1);
+}
+
+.menu > a {
+    background-color:#088f3c;
+    color:white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 55px;
+    border-radius: 0 0 5px 5px;
+    margin-top:10px;
+}
+
+
+
+
+footer {
+    width: 100% !important;
+    height: 150px;
+    
+    bottom: 0;
+    background-color: #000000da;
+    
+}
+
+.color_blanco {
+    color:white;
+}
+
+.centrar_texto {
+  text-align: center;
+  ;
+}
+
+.padre {
+  background-color: #fafafa;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  text-align: center;
+}
+.img_whatsapp{
+  padding: 20px;
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
+
+   
+.footer_imagen{
+  width: 40px;
+  height: 40px;
+
+}
+
+.centro {
+  max-width: 50%;
+  max-height: 50vh;
+}
+
+.social { 
+  float: left;
+  margin-left: 4%;
+  margin-top: 2%;
+}
+.texto_social{
+  margin-left:4%;
+
+}
+
+@media (max-width:600px){
+  .img_whatsapp{
+    width: 60%;
+  }
+  #consultar{
+    width: 50%;
+  }
+
+  
+}
+
+@media (max-width:720px)
+{
+  footer > tr > th > b{
+    display: table-column-group;
+    justify-content: center;
+  }
+}

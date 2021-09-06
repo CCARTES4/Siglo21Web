@@ -1,0 +1,85 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+<link href="{% static 'core/css/bootstrap.css %" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/estilos.css' %}" />
+<script type="text/javascript" src="{% static 'core/js/jquery.js' %}" ></script>
+
+
+{% block contenido %}
+<form action="" method="POST">
+<div class="container" style=" width: 100%;
+  padding-right: 0% !important;
+  padding-left: 0% !important;
+  margin-left: 0%!important;
+  margin-right: 0%!important;">
+
+    
+        {% csrf_token %}
+        <div class="listaMenu" align="center">
+            <br>
+            <h1 align="center" id="tituloMenu">Menu</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button name="BOTON_MENU" value="1" class="btn" type="submit" id="button1"></button>
+            <button name="BOTON_MENU" value="2" class="btn" type="submit" id="button2"></button>
+            <button name="BOTON_MENU" value="3" class="btn" type="submit" id="button3"></button>
+            <button name="BOTON_MENU" value="4" class="btn" type="submit" id="button4"></button>
+            <button name="BOTON_MENU" value="5" class="btn" type="submit" id="button5"></button>
+            <button name="BOTON_MENU" value="6" class="btn" type="submit" id="button6"></button>
+            <button name="BOTON_MENU" value="7" class="btn" type="submit" id="button7"></button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+
+        <div class="barraInferior">
+        <br>
+        <br>
+        <br>
+        <br>
+
+        </div>
+        <br>
+        <br>
+
+        {% for c in carta %}
+            <div class="menu-grid-main" align="center" >
+                <div class= "col-sm-4 menu-grid">
+                <div class="tituloPlato"><b>{{c.data.1}}</b></div>
+                <div>
+                {% if c.imagen %}
+                    <img class="img-rounded img-responsive"  src="data:imagen/png;base64,{{c.imagen}}" alt="" id="imagenMenu">
+
+                {% endif %}
+                <ul class="precioPlato"><b> ${{c.data.2}}</b></ul>
+                </div>
+                
+                
+
+                
+                <br>
+                <br>
+                
+                
+                </div>
+            </div>
+        {% endfor %}
+        
+
+    
+</div>
+</form>
+{% endblock contenido %}
+
+

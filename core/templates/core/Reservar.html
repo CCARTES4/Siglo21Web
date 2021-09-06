@@ -1,0 +1,82 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block contenido %}
+
+<body id="body" oncontextmenu = "return false ">
+  <form action="" method="POST" id="formularioReserva"> 
+    {% csrf_token %}
+  <div id="contact" class="container">
+    <h3 class="text-center">Reservar Mesa</h3>
+    <p class="text-center"><em>Realiza tu reserva de mesa aquí!</em></p>
+  
+    <div class="row">
+  
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <input class="form-control" id="rut_cli" name="rut_cli" placeholder="Rut" type="text" required oninput="checkRut(this)" maxlength="10">
+            <script src="{% static 'core/js/validarRut.js' %}"></script>
+            <script src="{% static 'core/js/validarut.js' %}"></script>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" required>
+            
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="aPaterno" name="aPaterno" placeholder="Apellido paterno" type="text" required>
+            
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="aMaterno" name="aMaterno" placeholder="Apellido materno" type="text" required >
+            
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="correo" name="correo" placeholder="CorreoElectrónico@gmail.com" type="email" required >
+          </div>
+          
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="telefono" name="telefono" type="tel" required pattern="[9]{1}[0-9]{8}" placeholder="912345678">
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="Fecha_reserva" name="Fecha_reserva" placeholder="Fecha" type="date" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="cant_personas" name="cant_personas" placeholder="Cantidad Personas" type="number" min="1" required >
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="Hora" name="Hora" placeholder="Hora" type="time" required>
+          </div>
+  
+        </div>
+  
+  
+        
+        <textarea class="form-control" id="comentario" name="comentario" placeholder="Comentario" rows="5"></textarea>
+        <br>
+  
+        <button  class="btn pull-right" type="submit">Enviar </button>
+        
+      </div>
+    </div>
+    
+  </form>
+  <!-- <script src="{% static 'core/js/validaciones.js' %}"></script> -->
+  <script src="{% static 'core/js/validacionesNombre.js' %}"></script>
+</body>
+
+
+{% if messages %}
+  {% for m in messages %}
+    <script>
+      Swal.fire({
+        "title": "Felicitaciones",
+        "text": "{{m}}",
+        "icon": "success"
+      })
+    </script>
+  {% endfor %}
+{% endif %}
+
+{% comment %} <h1>{{ mensaje }}</h1> {% endcomment %}
+{% endblock contenido %}

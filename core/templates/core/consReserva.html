@@ -1,0 +1,147 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% block contenido %}
+
+
+<body>
+  <form action="" method="POST" id="FormularioConsulta">
+    {% csrf_token %}
+
+    <h3 class="text-center"><b>Consultar Reserva</h3>
+    <p class="text-center"><em><b>Consulte su reserva aquí!</em></p>
+
+
+
+
+    <div class="row" style=" width: 99%;
+    padding-right: 0% !important;
+    padding-left: 0% !important;
+    margin-left: 0%!important;
+    margin-right: 0%!important;">
+
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-3 form-group">
+            <input class="form-control" id="rut_cli" name="rut_cli" placeholder="Rut" type="text"
+              oninput="checkRut(this)">
+              <script src="{% static 'core/js/validarRut.js' %}"></script>
+              <script src="{% static 'core/js/validarut.js' %}"></script>
+            
+          </div>
+          <div class="col-sm-3 form-group">
+            <input class="form-control" id="Fecha_reserva" name="Fecha_reserva" placeholder="Fecha" type="date">
+          </div>
+          <div class="col-sm-3 form-group">
+            <input class="form-control" id="Hora" name="Hora" placeholder="Hora" type="time">
+          </div>
+
+          <div class="col-sm-3 form-group">
+            <input class="form-control" id="N_reserva" name="N_reserva" placeholder="Numero de Reserva" type="text">
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+
+          <table class="table" id="consultar">
+            <tr>
+              <th><input id="id_reserva" name="txtId" value="" type="hidden"></th>
+            </tr>
+            {% for p in consReserva %}
+            <tr>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="nombre" disabled=true name="nombre" placeholder="Nombre" type="text"
+                  value="{{ p.1 }}">
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="aPaterno" disabled=true name="aPaterno" placeholder="Apellido paterno"
+                  type="text" value="{{ p.2 }}">
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="aMaterno" disabled=true name="aMaterno" placeholder="Apellido materno"
+                  type="text" value="{{ p.3 }}">
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="correo" disabled=true name="correo"
+                  placeholder="CorreoElectrónico@gmail.com" type="email" value="{{ p.4 }}">
+              </div>
+
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="telefono" disabled=true name="telefono" placeholder="Teléfono"
+                  type="text" value="{{ p.5 }}">
+              </div>
+
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="cant_personas" disabled=true name="cant_personas"
+                  placeholder="Cantidad Personas" type="number" value="{{ p.6 }}">
+              </div>
+
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="Fecha_reserva" disabled=true name="Fecha_reserva" placeholder="Fecha"
+                  type="date" value="{{ p.7 }}">
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="Hora" disabled=true name="Hora" placeholder="Hora" type="time"
+                  value="{{ p.8 }}">
+              </div>
+
+
+
+
+              <textarea class="form-control" disabled=true id="comentario" name="comentario" placeholder="Comentario"
+                rows="5">{{ p.9 }}</textarea>
+              <div class="col-sm-6 form-group">
+                <td><input id="id_reserva" name="txtId" value="{{p.0}}" type="hidden"></td>
+                <br>
+                <div align="center">
+                  <button name="BOTON" onclick="setTimeout(myFunction,2000)" value="ELIMINAR"
+                    class="btn btn-danger btn-sm" type="submit">Eliminar Reserva </button>
+                </div>
+                <br>
+
+            </tr>
+            {% endfor %}
+
+          </table>
+
+
+
+          <br>
+          <br>
+          <br>
+          <br>
+
+
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <button name="BOTON" value="CONSULTAR" class="btn pull-right" type="submit">Consultar </button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+  </form>
+</body>
+
+
+
+{% if messages %}
+{% for m in messages %}
+<script>
+  Swal.fire({
+    "title": "Notificación",
+    "text": "{{m}}",
+    "icon": "success"
+  })
+</script>
+{% endfor %}
+{% endif %}
+
+{% endblock contenido %}
